@@ -1,20 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    Quick Sort Algorithm
+*/
+
+
+/*
+    Overall Time Complexity Worst Case: O(n^2)
+    Best/Average Case: O(n lg(n))
+
+    Space Complexity: Auxiliary Space complexity is O(n log(n)) => call stack
+*/
+
 int partition(int arr[], int start, int end){
 
+
+    /*
+    Getting the best pivot can be done by choosing the
+    median of the array
+    Here I chose the end of the interval as my pivot;
+    */
     int pivot = arr[end];
     int pIndex = start;
 
-    for(int i = start; i<=end; i++){
-
+    for(int i = start; i < end; i++){
         if(arr[i] <= pivot){
-
             swap(arr[i], arr[pIndex]);
             pIndex++;
-        } 
-
+        }
     }
+
     swap(arr[end],arr[pIndex]);
 
     return pIndex;
@@ -43,7 +59,7 @@ void printArray(int A[], int size)
 int main()
 {
 
-    int arr[] = {4,3,1,2};
+    int arr[] = {4,3,1,2,0,-2};
     int arr_size = sizeof(arr)/sizeof(arr[0]);
     int temp[arr_size];
 
