@@ -10,7 +10,7 @@ using namespace std;
     Overall Time Complexity Worst Case: O(n^2)
     Best/Average Case: O(n lg(n))
 
-    Space Complexity: Auxiliary Space complexity is O(n log(n)) => call stack
+    Space Complexity: Auxiliary Space complexity is O(log(n)) => call stack
 */
 
 int partition(int arr[], int start, int end){
@@ -40,13 +40,20 @@ int partition(int arr[], int start, int end){
 void quickSort(int arr[], int start, int end){
     if(start<end){
 
+        // Partitioning
         int pIndex = partition( arr, start, end);
 
+
+        //Splitting the interval
         quickSort(arr,start, pIndex-1);
         quickSort(arr, pIndex+1, end);
+
     }
 }
 
+/*
+    Printing the Array
+*/
 
 void printArray(int A[], int size)
 {
@@ -65,6 +72,7 @@ int main()
 
     printf("Given array is \n");
     printArray(arr, arr_size);
+
 
     quickSort(arr, 0, arr_size-1);
 

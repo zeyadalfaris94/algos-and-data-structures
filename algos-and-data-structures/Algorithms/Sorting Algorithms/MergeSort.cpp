@@ -1,8 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    Merge Sort Algorithm
+*/
+
+
+/*
+    Overall Time Complexity Worst Case: O(n log(n))
+
+    Space Complexity: Auxiliary Space complexity is O(n) using arrays
+    and O(1) in linked list implementations.
+
+    If you count stack frames, then it's O(n)+ O(log n),
+    so still O(n) in case of arrays.
+    In case of lists it's O(log n) additional memory
+*/
+
+
 void merge(int arr[],int temp[], int leftStart, int rightEnd)
 {
+
+    /*
+        Here we are merging the array as the
+        normal 2 pointers approach says
+
+        We have 2 sorted arrays, and want to merge them
+    */
 
     int leftEnd = (rightEnd+leftStart)/2;
     int rightStart = leftEnd+1;
